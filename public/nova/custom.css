@@ -1,0 +1,50 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@keyframes resizeanim {from {opacity: 0;}to { opacity: 0; }} .ResizeSensor__resizeTriggers { animation: 1ms resizeanim; visibility: hidden; opacity: 0; } .ResizeSensor__resizeTriggers, .ResizeSensor__resizeTriggers > div, .ResizeSensor__contractTrigger:before { content: ' '; display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; } .ResizeSensor__resizeTriggers > div { background: #eee; overflow: auto; } .ResizeSensor__contractTrigger:before { width: 200%; height: 200%; }
+.table tr td{
+	vertical-align: middle !important;
+}
+
+.table-detail{
+  width: 100%;
+  margin: 30px 0px;
+}
+
+.table-detail tr th, .table-detail tr td{
+	vertical-align: top !important;
+	padding: 8px 15px;
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sticky-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 90px !important;
+    z-index: 1020;
+  }
+}
+
+.ppdb-card{
+  background-image: url('../ppdb_assets/img/overlay-bg.jpg');
+}
+
+.bg-image {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+}
+
+.overlay-mf {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  opacity: .7;
+}
+
+.paralax-mf {
+  position: relative;
+  padding: .6rem 0
+}
