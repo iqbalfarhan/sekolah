@@ -456,6 +456,34 @@
 							</ol>
 						</td>
 					</tr>
+					<tr>
+						<td>
+							<b>Konseling</b>
+							<ol>
+								@isset ($rincian->konseling)
+								@foreach ($rincian->konseling as $konseling)
+								@if ($konseling->jenis!= "")
+								<li><b>Melakukan {{$konseling->jenis}}.</b> {{$konseling->keterangan}}. kemudian di konseling pada {{$konseling->tanggal}} dengan tindakan {{$konseling->tindakan}}</li>
+								@endif
+								@endforeach
+								@endisset
+							</ol>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<b>Kesehatan</b>
+							<ol>
+								@isset ($rincian->kesehatan)
+								@foreach ($rincian->kesehatan as $kesehatan)
+								@if ($kesehatan->nama_penyakit!= "")
+								<li>{{$kesehatan->nama_penyakit}}. diderita selama {{$kesehatan->lama}}. {{$kesehatan->keterangan}}</li>
+								@endif
+								@endforeach
+								@endisset
+							</ol>
+						</td>
+					</tr>
 				</table>
 
 				<table class="table table-sm mb-5">

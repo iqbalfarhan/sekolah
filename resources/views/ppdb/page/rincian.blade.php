@@ -90,7 +90,7 @@
 	<div class="card-body">
 		<h4>Prestasi</h4>
 		<div class="table-responsive">
-			<table class="table">
+			<table class="table table-bordered">
 				<thead>
 					<th>#</th>
 					<th>Jenis</th>
@@ -124,13 +124,13 @@
 							</select>
 						</td>
 						<td class="p-0">
-							<input type="text" name="prestasi[{{$i}}][nama]" class="form-control border-0 m-0" placeholder="--">
+							<input type="text" name="prestasi[{{$i}}][nama]" class="form-control border-0 m-0" placeholder="...">
 						</td>
 						<td class="p-0">
-							<input type="text" name="prestasi[{{$i}}][tahun]" class="form-control border-0 m-0" placeholder="--">
+							<input type="text" name="prestasi[{{$i}}][tahun]" class="form-control border-0 m-0" placeholder="...">
 						</td>
 						<td class="p-0">
-							<input type="text" name="prestasi[{{$i}}][penyelenggara]" class="form-control border-0 m-0" placeholder="--">
+							<input type="text" name="prestasi[{{$i}}][penyelenggara]" class="form-control border-0 m-0" placeholder="...">
 						</td>
 					</tr>
 					@endfor
@@ -150,7 +150,7 @@
 	<div class="card-body">
 		<h4>Beasiswa</h4>
 		<div class="table-responsive">
-			<table class="table">
+			<table class="table table-bordered">
 				<thead>
 					<th>#</th>
 					<th>Jenis</th>
@@ -173,13 +173,13 @@
 							</select>
 						</td>
 						<td class="p-0">
-							<input type="text" name="beasiswa[{{$i}}][keterangan]" class="form-control border-0 m-0" placeholder="--">
+							<input type="text" name="beasiswa[{{$i}}][keterangan]" class="form-control border-0 m-0" placeholder="...">
 						</td>
 						<td class="p-0">
-							<input type="text" name="beasiswa[{{$i}}][tahun_mulai]" class="form-control border-0 m-0" placeholder="--">
+							<input type="text" name="beasiswa[{{$i}}][tahun_mulai]" class="form-control border-0 m-0" placeholder="...">
 						</td>
 						<td class="p-0">
-							<input type="text" name="beasiswa[{{$i}}][tahun_selesai]" class="form-control border-0 m-0" placeholder="--">
+							<input type="text" name="beasiswa[{{$i}}][tahun_selesai]" class="form-control border-0 m-0" placeholder="...">
 						</td>
 					</tr>
 					@endfor
@@ -192,6 +192,91 @@
 			<li><b>Tahun Mulai :</b> Tahun peserta didik menerima beasiswa</li>
 			<li><b>Tahun Selesai :</b> Aapabila beasiswa hanya di terima sekali maka, diisi sama dengan tahun mulai</li>
 		</ul>
+	</div>
+
+	<div class="card-body">
+		<h4>Riwayat Konseling</h4>
+		<p>Diisi dengan pelanggaran yang pernah siswa akukan di sekolah</p>
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<thead>
+					<th>#</th>
+					<th>Jenis pelanggaran</th>
+					<th>Tanggal</th>
+					<th>Keterangan</th>
+					<th>Tindakan sekolah</th>
+				</thead>
+				<tbody>
+					@for($i = 0; $i <3; $i++)
+					<tr>
+						<td>{{$i+1}}</td>
+						<td class="p-0">
+							<select name="konseling[{{$i}}][jenis]" id="" class="form-control border-0 m-0">
+								<option value="">--</option>
+								<option value="Pelanggran ringan">Pelanggran ringan</option>
+								<option value="Pelanggran sedang">Pelanggran sedang</option>
+								<option value="Pelanggran berat">Pelanggran berat</option>
+							</select>
+						</td>
+						<td class="p-0">
+							<input type="date" name="konseling[{{$i}}][tanggal]" class="form-control border-0 m-0" placeholder="...">
+						</td>
+						<td class="p-0">
+							<input type="text" name="konseling[{{$i}}][keterangan]" class="form-control border-0 m-0" placeholder="...">
+						</td>
+						<td class="p-0">
+							<input type="text" name="konseling[{{$i}}][tindakan]" class="form-control border-0 m-0" placeholder="...">
+						</td>
+					</tr>
+					@endfor
+				</tbody>
+			</table>
+		</div>
+		<ul class="list-unstyled small text-primary">
+			<li><b>Jenis peanggaran :</b> Jenis pelanggaran yang pernah dilakukan</li>
+			<li><b>Tanggal :</b> Diisi dengan tanggal melakukan konseling</li>
+			<li><b>Keterangan :</b> Keterangan tentang pelanggaran peserta didik (berisi: pelanggaran yang diakukan dengan contoh: merokok)</li>
+			<li><b>tindakan :</b> tindakan yang diambil sekolah untuk kasus pelanggaran ini. dapat diisi dengan hukuman yang diberikan, skorsing, dikeluarkan</li>
+		</ul>
+	</div>
+
+	<div class="card-body">
+		<h4>Riwayat Kesehatan</h4>
+		<p>Diisi apabila siswa memiliki penyakit serius</p>
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<thead>
+					<th>#</th>
+					<th>Nama penyakit</th>
+					<th>lama</th>
+					<th>Keterangan</th>
+				</thead>
+				<tbody>
+					@for($i = 0; $i <3; $i++)
+					<tr>
+						<td>{{$i+1}}</td>
+						<td class="p-0">
+							<input type="text" name="kesehatan[{{$i}}][nama_penyakit]" class="form-control border-0 m-0" placeholder="...">
+						</td>
+						<td class="p-0">
+							<input type="text" name="kesehatan[{{$i}}][lama]" class="form-control border-0 m-0" placeholder="...">
+						</td>
+						<td class="p-0">
+							<input type="text" name="kesehatan[{{$i}}][keterangan]" class="form-control border-0 m-0" placeholder="...">
+						</td>
+					</tr>
+					@endfor
+				</tbody>
+			</table>
+		</div>
+		<ul class="list-unstyled small text-primary">
+			<li><b>Nama penyakit :</b> tuliskan nama penyakit</li>
+			<li><b>Lama :</b> dapat diisi dengan kurun tahun (contoh: 3 tahun)</li>
+			<li><b>Keterangan :</b> diisi dengan informasi tambahan</li>
+		</ul>
+	</div>
+
+	<div class="card-body">
 		<button class="btn btn-primary">Simpan data rincian</button>
 	</div>
 

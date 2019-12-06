@@ -394,6 +394,8 @@ class StudentController extends Controller
             'jumlah_saudara' => $request->post('jumlah_saudara'),
             'prestasi' => $request->post('prestasi'),
             'beasiswa' => $request->post('beasiswa'),
+            'konseling' => $request->post('konseling'),
+            'kesehatan' => $request->post('kesehatan'),
         ];
 
         $countdata = Detail_siswa::where('siswa_id', $request->post('id'))->count();

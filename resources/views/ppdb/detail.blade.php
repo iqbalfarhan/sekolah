@@ -423,7 +423,7 @@
 
 				<table class="table table-sm mb-5">
 					<tr class="table-primary">
-						<th>Data Rincian - Prestasi dan Beasiswa</th>
+						<th>Data Rincian</th>
 					</tr>
 					<tr>
 						<td>
@@ -447,6 +447,34 @@
 								@foreach ($rincian->beasiswa as $beasiswa)
 								@if ($beasiswa->jenis!= "")
 								<li>{{$beasiswa->keterangan}} jenis {{$beasiswa->jenis}} Mulai Tahun {{$beasiswa->tahun_mulai}} sampai {{$beasiswa->tahun_selesai}}</li>
+								@endif
+								@endforeach
+								@endisset
+							</ol>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<b>Konseling</b>
+							<ol>
+								@isset ($rincian->konseling)
+								@foreach ($rincian->konseling as $konseling)
+								@if ($konseling->jenis!= "")
+								<li><b>Melakukan {{$konseling->jenis}}.</b> {{$konseling->keterangan}}. kemudian di konseling pada {{$konseling->tanggal}} dengan tindakan {{$konseling->tindakan}}</li>
+								@endif
+								@endforeach
+								@endisset
+							</ol>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<b>Kesehatan</b>
+							<ol>
+								@isset ($rincian->kesehatan)
+								@foreach ($rincian->kesehatan as $kesehatan)
+								@if ($kesehatan->nama_penyakit!= "")
+								<li>{{$kesehatan->nama_penyakit}}. diderita selama {{$kesehatan->lama}}. {{$kesehatan->keterangan}}</li>
 								@endif
 								@endforeach
 								@endisset

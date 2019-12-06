@@ -294,6 +294,8 @@ class PpdbController extends Controller
                 'jumlah_saudara' => $request->post('jumlah_saudara'),
                 'prestasi' => $request->post('prestasi'),
                 'beasiswa' => $request->post('beasiswa'),
+                'konseling' => $request->post('konseling'),
+                'kesehatan' => $request->post('kesehatan'),
             ];
 
             $user_id = $request->post('id');
